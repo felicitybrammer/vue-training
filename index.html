@@ -18,12 +18,16 @@
         </div>
         <div class="search-form">
             
-            <label for="movie-name">Search for a movie:</label>
-            <input id="movie-name">
+            <label for="movie-title">Search for a movie:</label>
+            <input id="movie-title" v-model="title">
 
             <input class="button" type="submit" value="Search" @click="fetchAPIData">
+            
         </div>
         <!-- Movies will be displayed here -->
+        <div v-if="responseAvailable">
+            <p>Result goes here:<i>{{ result }}</i></p>
+        </div>
     </div>
 
     <!-- Import App -->

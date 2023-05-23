@@ -1,7 +1,8 @@
 const app = Vue.createApp({
     data() {
         return {
-            result: " ",
+            title: "",
+            result: [],
             responseAvailable: false,
             apiKey: '0702956e69msh60d428207c19d86p15a11cjsnfe5d02a497b6'
         }
@@ -9,8 +10,8 @@ const app = Vue.createApp({
     methods: {
         fetchAPIData() {
             this.responseAvailable = false
-
-            fetch("https://movie-database-alternative.p.rapidapi.com/?r=json&i=tt4154796", {
+            // r=json&i=tt4154796
+            fetch("https://movie-database-alternative.p.rapidapi.com/?r=json&s=Titanic", {
                 "method": "GET",
                 "headers": {
                     'X-RapidAPI-Key': this.apiKey,
@@ -18,6 +19,7 @@ const app = Vue.createApp({
                 }
             })
                 .then(response => {
+                    console.log(response)
                     if (response.ok) {
                         return response.json()
                     } else {
@@ -25,7 +27,7 @@ const app = Vue.createApp({
                     }
                 })
                 .then(response => {
-                    this.result = response.body
+                    this.result = response
                     this.responseAvailable = true
                 })
                 .catch(err => {
