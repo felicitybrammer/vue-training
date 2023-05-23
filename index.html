@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Empire</title>
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <!-- Import Vue -->
+    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="nav-bar">
+            <h1>Movie Empire</h1>
+        </div>
+        <div class="search-form">
+            
+            <label for="movie-name">Search for a movie:</label>
+            <input id="movie-name">
+
+            <input class="button" type="submit" value="Search">
+        </div>
+        <!-- Movies will be displayed here -->
+    </div>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+
+    <!-- Import Components -->
+
+    <!-- Mount App -->
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+</body>
+
+</html>
