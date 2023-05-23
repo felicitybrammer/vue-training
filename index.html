@@ -25,15 +25,18 @@
             
         </div>
         <!-- Movies will be displayed here -->
-        <div v-if="responseAvailable">
+        <!-- add movieList component -->
+        <movie-list :result="result"></movie-list>
+        <!-- <div v-if="responseAvailable">
             <p>Result goes here:<i>{{ result }}</i></p>
-        </div>
+        </div> -->
     </div>
 
     <!-- Import App -->
     <script src="./main.js"></script>
 
     <!-- Import Components -->
+    <script src="./components/MovieList.js"></script>
 
     <!-- Mount App -->
     <script>

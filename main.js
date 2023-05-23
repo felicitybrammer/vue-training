@@ -1,8 +1,7 @@
 const app = Vue.createApp({
     data() {
         return {
-            title: "",
-            result: [],
+            results: {},
             responseAvailable: false,
             apiKey: '0702956e69msh60d428207c19d86p15a11cjsnfe5d02a497b6'
         }
@@ -27,7 +26,7 @@ const app = Vue.createApp({
                     }
                 })
                 .then(response => {
-                    this.result = response
+                    this.results = response.Search[0]
                     this.responseAvailable = true
                 })
                 .catch(err => {
