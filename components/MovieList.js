@@ -1,7 +1,11 @@
 app.component('movie-list', {
     props: {
         results: {
-            type: Array,
+            type: Object,
+            required: true
+        }, 
+        responseAvailable: {
+            type: Boolean,
             required: true
         }
     },

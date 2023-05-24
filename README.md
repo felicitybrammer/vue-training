@@ -1,3 +1,3 @@
-# vue-training
+# Vue3 Movie List
 
-## Vue3 and OptionsAPI
+Built using OptionsAPI

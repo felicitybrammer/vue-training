@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Empire</title>
+    <title>Movie Search</title>
     <link rel="stylesheet" href="./assets/styles.css" />
     <!-- Import Vue -->
     <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
@@ -14,7 +14,7 @@
 <body>
     <div id="app">
         <div class="nav-bar">
-            <h1>Movie Empire</h1>
+            <h1>Movie Search</h1>
         </div>
         <div class="search-form">
             
@@ -26,7 +26,7 @@
         </div>
         <!-- Movies will be displayed here -->
         <!-- add movieList component -->
-        <movie-list :result="result"></movie-list>
+        <movie-list :results="results" :response-available="responseAvailable">{{ result }}</movie-list>
         <!-- <div v-if="responseAvailable">
             <p>Result goes here:<i>{{ result }}</i></p>
         </div> -->
