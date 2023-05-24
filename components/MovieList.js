@@ -11,12 +11,15 @@ app.component('movie-list', {
         <div class="results-container">
            
             <ul>
+                 
                 <li v-for="(result, index) in results" :key="index">
-                    {{ result.title }}
+                    {{ result.Title }}
                     <br/>
-                    {{ result.year }}
+                    {{ result.Year }}
                     <br/>
-                    {{ result.poster }}
+                    <a>{{ result.Poster }}</a>
+                    <br/>
+                    <br/>
                     <br/>
                 </li>
             </ul>
@@ -29,5 +32,6 @@ app.component('movie-list', {
             poster: ''
         }
     },
+    
 
 })

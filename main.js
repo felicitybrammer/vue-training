@@ -14,7 +14,7 @@ const app = Vue.createApp({
             } 
 
 
-            let url = "https://movie-database-alternative.p.rapidapi.com/?r=json&s=" + this.title
+            let url = "https://movie-database-alternative.p.rapidapi.com/?s=" + this.title
 
             fetch(url, {
                 "method": "GET",
@@ -32,6 +32,10 @@ const app = Vue.createApp({
                 })
                 .then(response => {
                     console.log(response.Search)
+                    if (response.Search == undefined) {
+                        alert("No results found. Please enter a new search.")
+                        
+                    }
                     this.results = response.Search
 
                 })
