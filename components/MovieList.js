@@ -1,19 +1,15 @@
 app.component('movie-list', {
     props: {
         results: {
-            type: Object,
+            type: Array,
             required: true
-        }, 
-        responseAvailable: {
-            type: Boolean,
-            required: true
-        }
+        },      
     },
     template:
         /*html*/
         `
-    <div v-if="responseAvailable">
         <div class="results-container">
+           
             <ul>
                 <li v-for="(result, index) in results" :key="index">
                     {{ result.title }}
@@ -24,8 +20,7 @@ app.component('movie-list', {
                     <br/>
                 </li>
             </ul>
-        </div>
-    </div>
+        </div>   
     `,
     data() {
         return {

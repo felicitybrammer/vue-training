@@ -1,15 +1,18 @@
 const app = Vue.createApp({
     data() {
-        return {
+        return { 
             title: '',
-            results: {},
-            responseAvailable: false,
+            results: [],
             apiKey: '0702956e69msh60d428207c19d86p15a11cjsnfe5d02a497b6'
         }
     },
     methods: {
         fetchAPIData() {
-            this.responseAvailable = false
+            if (this.title === '') {
+                alert('Please enter a movie title')
+                return
+            } 
+
 
             let url = "https://movie-database-alternative.p.rapidapi.com/?r=json&s=" + this.title
 
@@ -21,7 +24,6 @@ const app = Vue.createApp({
                 }
             })
                 .then(response => {
-                    console.log(response)
                     if (response.ok) {
                         return response.json()
                     } else {
@@ -29,8 +31,9 @@ const app = Vue.createApp({
                     }
                 })
                 .then(response => {
-                    this.results = response.Search[0]
-                    this.responseAvailable = true
+                    console.log(response.Search)
+                    this.results = response.Search
+
                 })
                 .catch(err => {
                     console.log(err)

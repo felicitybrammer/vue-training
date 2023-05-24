@@ -25,11 +25,7 @@
             
         </div>
         <!-- Movies will be displayed here -->
-        <!-- add movieList component -->
-        <movie-list :results="results" :response-available="responseAvailable">{{ result }}</movie-list>
-        <!-- <div v-if="responseAvailable">
-            <p>Result goes here:<i>{{ result }}</i></p>
-        </div> -->
+        <movie-list :results="results" >{{ results }}</movie-list>      
     </div>
 
     <!-- Import App -->
