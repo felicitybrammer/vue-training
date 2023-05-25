@@ -9,7 +9,7 @@ app.component('movie-list', {
         /*html*/
         `
         <div class="results-container">
-           
+           <p v-if="!results.length">There are no results yet</p>
             <ul>
                  
                 <li v-for="(result, index) in results" :key="index">
@@ -17,7 +17,7 @@ app.component('movie-list', {
                     <br/>
                     {{ result.Year }}
                     <br/>
-                    <a>{{ result.Poster }}</a>
+                    <a href="result.Poster">{{ result.Poster }}</a>
                     <br/>
                     <br/>
                     <br/>
